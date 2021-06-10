@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +31,17 @@ public class Stream {
         }*/
         
         persons.forEach(x -> System.out.println(x));
+        
+        
+        
+        //
+        
+        
+
+
 	}
 
+	public static int getEdad(LocalDate birthDate) {
+        return Period.between(birthDate, LocalDate.now()).getYears();
+    }
 }
