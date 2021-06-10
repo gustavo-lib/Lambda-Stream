@@ -24,7 +24,10 @@ public class Stream {
 
         List<Person> persons = Arrays.asList(p1, p2, p3, p4, p5);
         List<Product> products = Arrays.asList(pr1, pr2, pr3, pr4);
-
+        
+        for(int i = 0; i<persons.size(); i++){
+            System.out.println(persons.get(i));
+        }
 	}
 
 }
