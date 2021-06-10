@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import model.Person;
 import model.Product;
@@ -30,10 +31,12 @@ public class Stream {
             System.out.println(persons.get(i));
         }*/
         
-        persons.forEach(x -> System.out.println(x));
+        //persons.forEach(x -> System.out.println(x));
         
-        
-        
+        List<Person> filteredList1 = persons.stream()
+                .filter(p -> Stream.getEdad(p.getBirthDate()) >= 18)
+                .collect(Collectors.toList());
+        Stream.printList(filteredList1);
         //
         
         
@@ -43,5 +46,9 @@ public class Stream {
 
 	public static int getEdad(LocalDate birthDate) {
         return Period.between(birthDate, LocalDate.now()).getYears();
+    }
+	
+	public static void printList(List<?> list){
+        list.forEach(System.out::println);
     }
 }
