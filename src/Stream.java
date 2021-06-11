@@ -41,6 +41,7 @@ public class Stream {
         
         
         List<String> filteredList2 = persons.stream()
+        		  .filter(p -> Stream.getEdad(p.getBirthDate()) >= 18)
                   .map(Person::getName)
                   .collect(Collectors.toList());                     
                                                 
