@@ -32,14 +32,19 @@ public class Stream {
         }*/
         
         //persons.forEach(x -> System.out.println(x));
-        
+        //filter filtra datos por condicion 
         List<Person> filteredList1 = persons.stream()
                 .filter(p -> Stream.getEdad(p.getBirthDate()) >= 18)
                 .collect(Collectors.toList());
-        Stream.printList(filteredList1);
+        //Stream.printList(filteredList1);
         //
         
         
+        List<String> filteredList2 = persons.stream()
+                  .map(Person::getName)
+                  .collect(Collectors.toList());                     
+                                                
+        Stream.printList(filteredList2);
 
 
 	}
