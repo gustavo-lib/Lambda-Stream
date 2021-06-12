@@ -44,9 +44,11 @@ public class Stream {
         		  .filter(p -> Stream.getEdad(p.getBirthDate()) >= 18)
                   .map(Person::getName)
                   .collect(Collectors.toList());                     
-                                                
         Stream.printList(filteredList2);
-
+        
+        
+        long x=persons.stream().count();
+        System.out.println(x);
 
 	}
 
