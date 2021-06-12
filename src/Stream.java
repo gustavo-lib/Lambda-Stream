@@ -48,7 +48,14 @@ public class Stream {
         
         
         long x=persons.stream().count();
-        System.out.println(x);
+        System.out.println("cantidad "+x);
+        
+        persons.stream()
+         		   .map(Person::getName)
+         		   .distinct()
+         		   .sorted()
+         		   .forEach(System.out::println);
+        
 
 	}
 
