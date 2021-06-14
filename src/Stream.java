@@ -63,9 +63,15 @@ public class Stream {
         		   .findFirst()
                    .ifPresent(System.out::println);
         
+           
         System.out.println("*-*-*-*-*-*-*-*-");
         persons.stream()
                   .filter(s -> s.getName().startsWith("J"))
+                  .forEach(System.out::println);
+        
+        System.out.println("*-*-*-*-*-*-*-*-");
+        persons.stream()
+                  .filter(s -> s.getName().contains("e"))
                   .forEach(System.out::println);
                  
 	}
