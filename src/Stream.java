@@ -50,13 +50,20 @@ public class Stream {
         long x=persons.stream().count();
         System.out.println("cantidad "+x);
         
+        System.out.println("*-*-*-*-*-*-*-*-");
         persons.stream()
          		   .map(Person::getName)
          		   .distinct()
          		   .sorted()
          		   .forEach(System.out::println);
         
-
+        System.out.println("*-*-*-*-*-*-*-*-");
+        persons.stream()
+        		   .findFirst()
+                   .ifPresent(System.out::println);
+        
+        System.out.println("*-*-*-*-*-*-*-*-");
+        
 	}
 
 	public static int getEdad(LocalDate birthDate) {
